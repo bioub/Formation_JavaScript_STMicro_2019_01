@@ -14,22 +14,50 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+
 // on pause la question et on recoit la réponse via
 // un callback
 function jouer() {
 
+  if (essais.length) {
+    console.log('Vous avez déjà joué : ' + essais.join(' - '))
+  }
+
   rl.question('Quel est le nombre ?', (saisie) => {
-    console.log('Réponse : ' + saisie);
+
+    const entierSaisi = parseInt(saisie);
+
+    if (isNaN(entierSaisi)) {
+      console.log('Erreur : il faut saisir un nombre');
+      return jouer();
+    }
+
+    essais.push(entierSaisi);
 
     // if .. else ...
+    if (entierSaisi < entierAlea) {
+      console.log('Trop petit');
+      return jouer();
+    }
 
-    jouer();
+    if (entierSaisi > entierAlea) {
+      console.log('Trop grand');
+      return jouer();
+    }
+
+    console.log('Gagné !');
+    rl.close();
+
   });
 }
 
+const entierAlea = getRandomInt(100);
+const essais = [];
 jouer();
-console.log('FIN');
-
 
 // pile d'appels
 // ^               question        question
