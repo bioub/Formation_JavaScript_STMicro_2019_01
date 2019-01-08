@@ -18,6 +18,6 @@ console.log(typeof interne); // undefined
 
 // pile d'appels
 // ^
-// |
-// |externe - interne
+// |interne
+// |externe
 // +--------------------------> temps

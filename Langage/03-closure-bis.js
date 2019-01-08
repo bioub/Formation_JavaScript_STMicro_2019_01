@@ -17,7 +17,7 @@ console.log(typeof interne); // undefined
 // pile d'appels
 // ^
 // |
-// |externe - interneDepuisExterne
+// |externe - interneDepuisExterne ..... cb
 // +--------------------------> temps
 
 

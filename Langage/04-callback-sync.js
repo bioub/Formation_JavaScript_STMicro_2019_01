@@ -13,9 +13,9 @@ for (let i = 0; i < nbs.length; i++) {
 // forEach, filter, map, reduce ....
 // programmation fonctionnelle
 nbs
-  .filter((nb, i, array) => nb % 2 === 1)
-  .map((nb, i, array) => nb ** 2)
-  .forEach((nb, i, array) => console.log(nb));
+  .filter((nb) => nb % 2 === 1)
+  .map((nb) => nb ** 2)
+  .forEach((nb) => console.log(nb));
 
 console.log('FIN');
 
