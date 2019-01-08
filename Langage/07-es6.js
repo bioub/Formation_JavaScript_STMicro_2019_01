@@ -37,3 +37,21 @@ console.log(xValue); // 10
 
 const {x, y, z = 10} = coords;
 console.log(x); // 10
+
+
+// Générateur
+function *getValues() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = getValues();
+
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+console.log(gen.next().value); // 3
+
+for (const value of getValues()) {
+  console.log(value);
+}
