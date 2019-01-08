@@ -14,8 +14,12 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+function getRandomFloat(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 
@@ -55,7 +59,7 @@ function jouer() {
   });
 }
 
-const entierAlea = getRandomInt(100);
+const entierAlea = getRandomInt(0, 100);
 const essais = [];
 jouer();
 
