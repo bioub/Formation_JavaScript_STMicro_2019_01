@@ -7,8 +7,27 @@
  */
 function addTodo(todo, container) {
   const rowElt = document.createElement('div');
-  rowElt.innerText = todo.text;
+
+  const inputElt = document.createElement('input');
+  inputElt.value = todo.text;
+  rowElt.appendChild(inputElt);
+
   container.appendChild(rowElt);
 }
+
+/*
+Exercice DOM :
+1 - Modifier addTodo de telle sorte à ajouter
+une checkbox avant le champs (<input type="checkbox">)
+et un bouton moins après le champs (<button>-</button>)
+MDN : HTMLInputElement et HTMLButtonElement
+
+2 - Au clic du bouton moins supprimer la ligne (l'élement rowElt)
+MDN: removeChild, parentNode
+
+3 - Au clic de la checkbox initiale
+cocher ou décocher toutes les autres
+MDN: HTMLInputElement, querySelectorAll
+*/
 
 exports.addTodo = addTodo;

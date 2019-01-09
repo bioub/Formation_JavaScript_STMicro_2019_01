@@ -5,7 +5,11 @@ const todoContainerElt = document.querySelector('.todo-container');
 /** @type {HTMLInputElement} */
 const todoTextElt = document.querySelector('.todo-text');
 
-btnAddElt.addEventListener('click', () => {
+btnAddElt.addEventListener('click', (event) => {
+
+  // event.target ou event.currentTarget le bouton sur lequel j'ai cliqué
+  // dans ce cas event.target === btnAddElt
+
   addTodo({
     text: todoTextElt.value,
     completed: false,
