@@ -6,7 +6,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "scripts": {
-    "serve": "webpack-dev-server --mode development",
+    "serve": "webpack-dev-server --mode development --port=8888",
     "build": "webpack --mode production"
   }
 }
