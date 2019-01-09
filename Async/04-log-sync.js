@@ -6,11 +6,12 @@ function log(filePath, msg) {
   fs.appendFileSync(filePath, msg);
 }
 
+console.time('DONE');
 try {
   log('app.log', 'Ligne 1');
   log('app.log', 'Ligne 2');
   log('app.log', 'Ligne 3');
-  console.log('DONE');
+  console.timeEnd('DONE');
 }
 catch (err) {
   console.log('ERROR');

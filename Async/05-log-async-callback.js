@@ -23,3 +23,10 @@ log('app.log', 'Ligne 1', (err) => {
     });
   });
 });
+
+// pile d'appels
+// ^                            appendFile         cnsl.lg
+// |      appendFile            log                log
+// |try { log       }   ....... =>         ....... =>
+// +-------------------------------------------------------> temps
+//

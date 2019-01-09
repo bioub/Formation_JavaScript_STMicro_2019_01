@@ -6,7 +6,7 @@ const random = {
   getRandomFloat(min, max) {
     return Math.random() * (max - min) + min;
   },
-  getRandomInt(min, max) {
+  getRandomInt(min = 0, max = 100) {
     return Math.floor(Math.random() * (max - min) + min);
   },
 };

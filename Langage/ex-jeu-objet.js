@@ -9,6 +9,13 @@ const random = {
   },
 };
 
+/**
+ * La partie de Plus ou Moins
+ * @constructor
+ * @param {object} options Les options du Jeu
+ * @param {number} options.min La valeur min
+ * @param {number} options.max La valeur max
+ */
 function Jeu(options) {
   /*if (options === undefined) {
     options = {};
@@ -69,5 +76,8 @@ Jeu.prototype.jouer = function () {
 
 
 
-const partie = new Jeu();
+const partie = new Jeu({
+  min: 20,
+  max: 30,
+});
 partie.jouer();

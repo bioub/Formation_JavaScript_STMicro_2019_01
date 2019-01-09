@@ -1,4 +1,4 @@
-// référence vs pas référence (scalaire)
+// référence vs pas référence (scalaire: boolean, number)
 const nb1 = 1;
 let nb2 = nb1; // passage par valeur
 nb2 = 2;
@@ -30,6 +30,11 @@ console[logMethod](coords[key]); // 30;
 // pour boucler sur les clés
 for (const key in coords) {
   const value = coords[key];
+  console.log(key, value);
+}
+
+// ES8
+for (const [key, value] in Object.entries(coords)) {
   console.log(key, value);
 }
 
@@ -102,6 +107,12 @@ for (const key in contactAlpha) {
   // if (typeof contactAlpha[key] !== 'undefined') {
   if (contactAlpha.hasOwnProperty(key)) {
     const value = contactAlpha[key];
-
   }
 }
+
+console.log(contactAlpha instanceof Contact); // true
+console.log(contactAlpha instanceof Object); // true
+console.log(coords instanceof Object); // true
+
+console.log(contactAlpha.hasOwnProperty('prenom')); // true
+console.log(contactAlpha.hasOwnProperty('hello')); // false

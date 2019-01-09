@@ -24,14 +24,15 @@ console.log(sum(...nbs));
 
 const clone = [...nbs];
 
-
-const [un, deux, trois, quatre, cinq, six = 6] = nbs;
+// destructurer un tableau
+const [un, deux, , quatre, cinq, six = 6] = nbs;
 
 const coords = {
   x: 10,
   y: 20,
 };
 
+// destructurer un objet
 const {x: xValue} = coords;
 console.log(xValue); // 10
 
