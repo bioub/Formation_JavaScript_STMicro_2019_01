@@ -1,3 +1,5 @@
+import { prepend } from "./dom";
+
 /**
  * 
  * @param {object} todo 
@@ -12,7 +14,7 @@ function addTodo(todo, container) {
   inputElt.value = todo.text;
   rowElt.appendChild(inputElt);
 
-  container.appendChild(rowElt);
+  prepend(container, rowElt);
 }
 
 /*
@@ -30,4 +32,8 @@ cocher ou décocher toutes les autres
 MDN: HTMLInputElement, querySelectorAll
 */
 
-exports.addTodo = addTodo;
+// CommonJS (exports pour exporter l'API Public)
+// exports.addTodo = addTodo;
+
+// Module ES
+export { addTodo };

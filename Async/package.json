@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "async": "^2.6.1",
-    "bluebird": "^3.5.3"
+    "bluebird": "^3.5.3",
+    "rxjs": "^6.3.3"
   }
 }

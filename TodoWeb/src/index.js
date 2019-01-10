@@ -1,12 +1,22 @@
-const { addTodo } = require('./todo');
+// pour les fonctions, utiliser les polyfills (ex core-js)
+// import 'core-js/fn/string/pad-end'
+// '2123456'.padEnd(20, '0');
 
-const btnAddElt = document.querySelector('.btn-add');
+// CommonJS (require pour inclure un fichier et importer l'api public)
+// const { addTodo } = require('./todo');
+
+// Module ECMAScript (ES6, ES2015)
+import { addTodo } from './todo';
+
+const formElt = document.querySelector('form');
 const todoContainerElt = document.querySelector('.todo-container');
 /** @type {HTMLInputElement} */
 const todoTextElt = document.querySelector('.todo-text');
 
-btnAddElt.addEventListener('click', (event) => {
+formElt.addEventListener('submit', (event) => {
 
+  event.preventDefault();
+  
   // event.target ou event.currentTarget le bouton sur lequel j'ai cliqué
   // dans ce cas event.target === btnAddElt
 
@@ -15,6 +25,7 @@ btnAddElt.addEventListener('click', (event) => {
     completed: false,
   }, todoContainerElt);
 });
+
 /*
 console.log(btnAddElt instanceof HTMLButtonElement); // true
 console.log(btnAddElt instanceof HTMLElement); // true

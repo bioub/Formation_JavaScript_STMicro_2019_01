@@ -1,5 +1,8 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-loader": "^8.0.5",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1",
@@ -7,6 +10,10 @@
   },
   "scripts": {
     "serve": "webpack-dev-server --mode development --port=8888",
-    "build": "webpack --mode production"
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production"
+  },
+  "dependencies": {
+    "core-js": "^2.6.2"
   }
 }
