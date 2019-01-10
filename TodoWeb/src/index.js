@@ -12,6 +12,8 @@ const formElt = document.querySelector('form');
 const todoContainerElt = document.querySelector('.todo-container');
 /** @type {HTMLInputElement} */
 const todoTextElt = document.querySelector('.todo-text');
+const toggleElt = document.querySelector('.toggle-completed');
+const toggleShowElt = document.querySelector('.toggle-show');
 
 formElt.addEventListener('submit', (event) => {
 
@@ -26,6 +28,23 @@ formElt.addEventListener('submit', (event) => {
   }, todoContainerElt);
 });
 
+document.addEventListener('click', (event) => {
+  if (event.target.classList.contains('btn-remove')) {
+    const rowElt = event.target.parentNode;
+    todoContainerElt.removeChild(rowElt);
+  }
+});
+
+toggleElt.addEventListener('click', () => {
+  const checkboxes = todoContainerElt.querySelectorAll('.todo-completed');
+  // console.log(checkboxes instanceof Array); // false
+  // console.log(checkboxes instanceof NodeList); // true
+  
+  for (const checkbox of checkboxes) {
+    checkbox.checked = toggleElt.checked;
+  }
+});
+
 /*
 console.log(btnAddElt instanceof HTMLButtonElement); // true
 console.log(btnAddElt instanceof HTMLElement); // true
@@ -33,3 +52,10 @@ console.log(btnAddElt instanceof Element); // true
 console.log(btnAddElt instanceof Node); // true
 console.log(btnAddElt instanceof EventTarget); // true
 */
+
+
+toggleShowElt.addEventListener('click', () => {
+  // formElt.style.display = (formElt.style.display === 'none') ? null : 'none';
+
+  formElt.classList.toggle('hidden');
+});

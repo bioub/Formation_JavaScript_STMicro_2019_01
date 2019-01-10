@@ -5,13 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <form>
-    <input type="checkbox">
+    <input type="checkbox" class="toggle-completed">
     <input class="todo-text" type="text">
     <button class="btn-add">+</button>
   </form>
   <div class="todo-container"></div>
+
+  <button class="toggle-show">Toggle Show</button>
 </body>
 </html>

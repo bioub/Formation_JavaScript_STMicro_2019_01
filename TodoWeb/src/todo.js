@@ -1,4 +1,4 @@
-import { prepend } from "./dom";
+import { prepend } from './dom';
 
 /**
  * 
@@ -7,12 +7,23 @@ import { prepend } from "./dom";
  * @param {boolean} todo.completed
  * @param {HTMLElement} container 
  */
-function addTodo(todo, container) {
+function addTodo(todo, container) {
   const rowElt = document.createElement('div');
+
+  const checkboxElt = document.createElement('input');
+  checkboxElt.type = 'checkbox';
+  checkboxElt.checked = todo.completed;
+  checkboxElt.classList.add('todo-completed');
+  rowElt.appendChild(checkboxElt);
 
   const inputElt = document.createElement('input');
   inputElt.value = todo.text;
   rowElt.appendChild(inputElt);
+
+  const buttonElt = document.createElement('button');
+  buttonElt.innerText = '-';
+  buttonElt.classList.add('btn-remove');
+  rowElt.appendChild(buttonElt);
 
   prepend(container, rowElt);
 }
