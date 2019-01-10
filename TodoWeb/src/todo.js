@@ -22,6 +22,7 @@ function addTodo(todo, container) {
 
   const buttonElt = document.createElement('button');
   buttonElt.innerText = '-';
+  buttonElt.dataset.todoId = todo.id;
   buttonElt.classList.add('btn-remove');
   rowElt.appendChild(buttonElt);
 
