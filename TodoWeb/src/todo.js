@@ -1,11 +1,11 @@
 import { prepend } from './dom';
 
 /**
- * 
- * @param {object} todo 
+ *
+ * @param {object} todo
  * @param {string} todo.text
  * @param {boolean} todo.completed
- * @param {HTMLElement} container 
+ * @param {HTMLElement} container
  */
 function addTodo(todo, container) {
   const rowElt = document.createElement('div');

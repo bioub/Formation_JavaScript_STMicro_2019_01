@@ -1,6 +1,6 @@
 /**
- * @param {Element} container 
- * @param {Element} elt 
+ * @param {Element} container
+ * @param {Element} elt
  */
 function prepend(container, elt) {
   if (container.firstElementChild) {

@@ -20,7 +20,7 @@ const toggleShowElt = document.querySelector('.toggle-show');
 formElt.addEventListener('submit', async (event) => {
 
   event.preventDefault();
-  
+
   // event.target ou event.currentTarget le bouton sur lequel j'ai cliqué
   // dans ce cas event.target === btnAddElt
 
@@ -44,7 +44,7 @@ toggleElt.addEventListener('click', () => {
   const checkboxes = todoContainerElt.querySelectorAll('.todo-completed');
   // console.log(checkboxes instanceof Array); // false
   // console.log(checkboxes instanceof NodeList); // true
-  
+
   for (const checkbox of checkboxes) {
     checkbox.checked = toggleElt.checked;
   }
@@ -67,7 +67,7 @@ toggleShowElt.addEventListener('click', () => {
 
 (async () => {
   const todos = await fetchTodos();
-  
+
   for (const todo of todos) {
     addTodo(todo, todoContainerElt);
   }
